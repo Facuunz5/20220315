@@ -4,6 +4,7 @@
 ##	-DOCUMENTACIÓN-
 
 ## merge una feature con historial sucio.sh
+```
 mkdir 17
 cd 17
 touch f1
@@ -30,6 +31,7 @@ git --no-pager log --oneline --graph --all
 git checkout master
 git merge feature
 git --no-pager log --oneline --graph --all
+´´´
 
 ## genramos-conflicto+no-auto-mergeamos.sh
 ## EXPLICACIÓN: Si solo una rama modifica un fichero, al
