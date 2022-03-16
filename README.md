@@ -31,11 +31,11 @@ git --no-pager log --oneline --graph --all
 git checkout master
 git merge feature
 git --no-pager log --oneline --graph --all
-´´´
-
+```
 ## genramos-conflicto+no-auto-mergeamos.sh
 ## EXPLICACIÓN: Si solo una rama modifica un fichero, al
 ## mergear, esos cambios serán aceptados sin conflicto
+```
 rm -rf .git
 rm f1
 git init
@@ -61,8 +61,9 @@ git commit -m "+f1:L1:L2:+MOD"
 git merge --no-ff --no-edit rama1
 git --no-pager log --oneline --all --graph
 cat f1
-
+```
 ## github-actions-demo.yml
+```
 name: GitHub Actions Demo
 on: 
   push:
@@ -84,8 +85,10 @@ jobs:
       - name: Que ruta es
         run: pwd
       - run: echo "🍏 This job's status is ${{ job.status }}."
+```
 
 ## git_create_orphan.sh
+```
 cd repository
 git checkout --orphan orphan_name
 git rm -rf .
@@ -94,9 +97,11 @@ echo "#Title of Readme" > README.md
 git add README.md
 git commit -a -m "Initial Commit"
 git push origin orphan_name
+```
 
 ## pasos-previos-para-entender-rebase-para-eliminar-commits.sh
-###!/usr/bin/env bash
+```
+#!/usr/bin/env bash
 git init
 touch f1
 git add f1
@@ -117,9 +122,11 @@ git --no-pager log --oneline --all
 ## hasta aqui
 git rebase --interactive <commit-antes-de-lo-que-queremos-borrar>
 ## cambiar 'pick' por 'drop'
+```
 
 ## pasos-previos-para-entender-rebase.sh
-### #!/usr/bin/env bash
+```
+#!/usr/bin/env bash
 git init
 touch f1
 git add f1
@@ -142,8 +149,10 @@ git add change2
 git commit -m "c 2 en feature"
 git --no-pager log --oneline --graph
 ## hasta aquí, con esta estructura del repo, ahora podremos entender el rebase y compararlo con el merge
+```
 
 ## rebase_evita_historial_sucio.sh
+```
 mkdir 17
 cd 17
 touch f1
@@ -168,4 +177,4 @@ git commit -m "c 2 en feature"
 git rebase master #esto aplana el historial pero los dos commits de la rama feature pasarán a tener otro hash!
 git checkout master
 git merge feature
-
+```
